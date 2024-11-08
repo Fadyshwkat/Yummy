@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-black ">
+    <div class="loading">
+        <aside class="loading-screen d-none justify-content-center align-items-center" id="loadingScreen">
+            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4" style="position:absolute; top:50%; margin-top:-7em">
+              <div class="page-header text-center">
+                <i class="text-warning fa fa-spin fa-fw pull-left fa-spinner fa-5x" style="text-shadow: 0px 0px 0.2ex;"></i>
+                <hgroup style="text-shadow: 0px 0px 0.1ex;">
+                  <h1><small>Loading</small><br><span class="text-warning">Y</span>ummy </h1>
+                </hgroup>
+              </div>
+            </div>
+          </aside>
+    </div>
+    <div class="side-nav-menu min-vh-100 position-fixed d-flex top-0 text-white">
+        <div class="nav-tab  d-flex flex-column justify-content-between min-vh-100 p-4 bg-black">
+            <div class="links">
+                <ul class="list-unstyled overflow-hidden links-list">
+                    <li class="py-2 ps-2 li-1 search">Search</li>
+                    <li class="py-2 ps-2 li-2 category">Categories</li>
+                    <li class="py-2 ps-2 li-3 area">Area</li>
+                    <li class="py-2 ps-2 li-4 ingridents">Ingredients</li>
+                    <li class="py-2 ps-2 li-5 contact">Contact Us</li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="footer">
+                    <p>Copyright Â© 2019 All Rights <br>Reserved.</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black">
+            <a href="index.html"><img class="logo" src="imgs/logo.png" alt="" ></a>
+            <i class="fa-solid open-close-icon fa-align-justify fa-2x d-block open "></i>
+            <i class="fa-solid open-close-icon fa-2x fa-x d-none close"></i>
+            <div>
+                <i class="fa-solid fa-globe d-block "></i>
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+        </div>
+    </div>
+    <main class="container ps-5  py-5 ">
+        <div class="row gy-3 text-white mb-5 d-none" id="searchRow">
+            <div class="col-md-6 px-5 px-sm-2">
+                <div class="search-input">
+                    <input oninput="searchByName(this.value)" type="text" class="form-control bg-transparent text-white" placeholder="Search By Name">
+                </div>
+            </div>
+            <div class="col-md-6 px-5 px-sm-2">
+                <div class="search-input">
+                    <input oninput="searchByFirstLetter(this.value)" type="text" class="form-control bg-transparent text-white" placeholder="Search By First Letter">
+                </div>
+            </div>
+
+        </div>
+        <div class="row gy-3 text-white " id="row">
+            
+        </div>
+
+        <div class="contact-row container w-75 mt-md-5 d-none">
+            <div class="row g-4 text-white " id="row">
+            
+                <div class=" col-md-6">
+                    <input id="nameInput" oninput="inputsValidation(userNameRegex,this)" type="text" class="form-control" placeholder="Enter Your Name">
+                    <div id="nameAlert" class="alert alert-danger w-100 mt-2 mb-0 d-none">
+                        Special characters and numbers not allowed
+                    </div>
+                </div>
+                <div class=" col-md-6">
+                    <input id="emailInput" oninput="inputsValidation(emailRegex,this)" type="email" class="form-control " placeholder="Enter Your Email">
+                    <div id="emailAlert" class="alert alert-danger w-100 mt-2 mb-0 d-none">
+                        Email not valid *exemple@yyy.zzz
+                    </div>
+                </div>
+                <div class=" col-md-6">
+                    <input id="phoneInput" oninput="inputsValidation(phoneRegex,this)" type="text" class="form-control " placeholder="Enter Your Phone">
+                    <div id="phoneAlert" class="alert alert-danger w-100 mt-2 mb-0 d-none">
+                        Enter valid Phone Number(11 numbers starts with 01- 0/1/2/5- 8numbers)
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input id="ageInput" oninput="inputsValidation(ageRegex,this)" type="number" class="form-control " placeholder="Enter Your Age">
+                    <div id="ageAlert" class="alert alert-danger w-100 mt-2 mb-0 d-none">
+                        Enter valid age (1-99)
+                    </div>
+                </div>
+                <div class=" col-md-6">
+                    <input id="passwordInput" oninput="inputsValidation(passwordRegex,this)" type="password" class="form-control " placeholder="Enter Your Password">
+                    <div id="passwordAlert" class="alert alert-danger w-100 mt-2 mb-0 d-none">
+                        Enter valid password *Minimum eight characters, at least one letter and one number:*
+                    </div>
+                </div>
+                <div class=" col-md-6 ">
+                    <input id="repasswordInput" oninput="repasswordValidation(this)" type="password" class="form-control " placeholder="Repassword">
+                    <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 mb-0 d-none">
+                        Passwords do not match.
+                    </div>
+                </div>    
+                <button id="submitBtn" disabled class="btn btn-outline-danger px-2 mt-3 mx-auto">Submit</button>        
+            </div>
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+.loading-screen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+  }
+
+
+
+.logo{
+    width: 50px;
+}
+.nav-header i,.icons i{
+    cursor: pointer;
+}
+.links li{
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+}
+.li-1{
+    transition: top 0.5s 0.5s;
+}
+.li-2{
+    transition: top 0.5s 0.6s;
+}
+.li-3{
+    transition: top 0.5s 0.7s;
+}
+.li-4{
+    transition: top 0.5s 0.8s;
+}
+.li-5{
+    transition: top 0.5s 0.85s;}
+
+.links li:hover{
+    background-color: #363636;
+    
+}
+
+.side-nav-menu{
+    position: relative;
+    left: -257px;
+    transition: left 1s;
+    z-index: 100000;
+}
+
+
+.img-layer{
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left: 10px;
+    transform: translateY(110%);
+    transition: transform 1s;
+    border-radius: 10px;
+}
+.card:hover .img-layer{
+    transform: translateY(0px);
+}
+.card{
+    cursor: pointer;
+}
+.recipes{
+    background-color: #cff4fc;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px 5px;
+    color: #255174;
+    text-transform: capitalize;
+}
+
+::placeholder{
+    color:gray !important
+}
+
+.category-desc{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.image-container {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    overflow: hidden;
+    
+}
+
+.area-card{
+    cursor: pointer;
+}
+
+#submitBtn{
+    width: 100px;
+}
